@@ -1,54 +1,60 @@
 # ProjetoPoo Crew
 
-Welcome to the ProjetoPoo Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+Projeto de POO1, UFSC\
+Chatbot Telegram usando pyrogram e tgcrypt\
+Webscraping usando agentes de IA, com crewAI
 
-## Installation
+## Instalação
 
-Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+Certifique-se de que você possui Python \>=3.10 \<3.14 instalado no
+sistema.\
+Este projeto utiliza [**UV**](https://docs.astral.sh/uv/) para gerenciar dependências e lidar com
+pacotes, oferecendo uma experiência de configuração e execução simples.
 
-First, if you haven't already, install uv:
+Primeiro, caso ainda não tenha, instale o `uv`:
 
+Em seguida, navegue até o diretório do seu projeto e instale as
+dependências:
+
+(Opcional) Trave as dependências e instale-as usando o comando da CLI:
+Para poder instalar todas as dependências
 ```bash
-pip install uv
+uv sync
 ```
 
-Next, navigate to your project directory and install the dependencies:
+### Personalização
 
-(Optional) Lock the dependencies and install them by using the CLI command:
+**Adicione sua `OPENAI_API_KEY` no arquivo `.env`**
+
+-   Modifique `src/projeto_poo/config/agents.yaml` para definir seus
+    agentes\
+-   Modifique `src/projeto_poo/config/tasks.yaml` para definir suas
+    tarefas\
+-   Modifique `src/projeto_poo/crew.py` para adicionar sua própria
+    lógica, ferramentas e argumentos específicos\
+-   Modifique `src/projeto_poo/main.py` para adicionar entradas
+    personalizadas para seus agentes e tarefas
+
+## Executando o Projeto
+
+Para iniciar sua equipe de agentes de IA e começar a execução das
+tarefas, execute o seguinte a partir da pasta raiz do projeto:
+
 ```bash
-crewai install
-```
-### Customizing
-
-**Add your `OPENAI_API_KEY` into the `.env` file**
-
-- Modify `src/projeto_poo/config/agents.yaml` to define your agents
-- Modify `src/projeto_poo/config/tasks.yaml` to define your tasks
-- Modify `src/projeto_poo/crew.py` to add your own logic, tools and specific args
-- Modify `src/projeto_poo/main.py` to add custom inputs for your agents and tasks
-
-## Running the Project
-
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
-
-```bash
-$ crewai run
+crewai run
 ```
 
-This command initializes the projeto-poo Crew, assembling the agents and assigning them tasks as defined in your configuration.
+Este comando inicializa o Projeto-Poo Crew, montando os agentes e
+atribuindo tarefas conforme definido na configuração.
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+Este exemplo, sem modificações, criará um arquivo `report.md` na pasta
+raiz com o resultado de uma pesquisa sobre LLMs.
 
-## Understanding Your Crew
+## Entendendo Sua Crew
 
-The projeto-poo Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
-
-## Support
-
-For support, questions, or feedback regarding the ProjetoPoo Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
+O projeto possui 5 agents-
+1. Planejador de contexto
+2. Webscrap
+3. Analisador de Dados
+4. Resumir texto
+5. Análise Final
