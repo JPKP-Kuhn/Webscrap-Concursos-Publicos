@@ -1,0 +1,165 @@
+{
+  "region": {
+    "Norte": {
+      "regiao": "Norte",
+      "response": "Você está buscando concursos para o Norte.",
+      "estados": {
+        "Acre": {
+          "estado": "Acre",
+          "response": "Você está buscando concursos para o Acre."
+        },
+        "Amazonas": {
+          "estado": "Amazonas",
+          "response": "Você está buscando concursos para o Amazonas."
+        },
+        "Amapá": {
+          "estado": "Amapá",
+          "response": "Você está buscando concursos para o Amapá."
+        },
+        "Roraima": {
+          "estado": "Roraima",
+          "response": "Você está buscando concursos para o Roraima."
+        },
+        "Pará": {
+          "estado": "Pará",
+          "response": "Você está buscando concursos para o Pará."
+        },
+        "Rondônia": {
+          "estado": "Rondônia",
+          "response": "Você está buscando concursos para o Rondônia."
+        },
+        "Tocantins": {
+          "estado": "Tocantins",
+          "response": "Você está buscando concursos para o Tocantins."
+        }
+      }
+    },
+    "Nordeste": {
+      "regiao": "Nordeste",
+      "response": "Você está buscando concursos para o Nordeste.",
+      "estados": {
+        "Bahia": {
+          "estado": "Bahia",
+          "response": "Você está buscando concursos para a Bahia."
+        },
+        "Pernambuco": {
+          "estado": "Pernambuco",
+          "response": "Você está buscando concursos para o Pernambuco."
+        },
+        "Paraíba": {
+          "estado": "Paraíba",
+          "response": "Você está buscando concursos para a Paraíba."
+        },
+        "Piauí": {
+          "estado": "Piauí",
+          "response": "Você está buscando concursos para o Piauí."
+        },
+        "Rio Grande do Norte": {
+          "estado": "Rio Grande do Norte",
+          "response": "Você está buscando concursos para o Rio Grande do Norte."
+        },
+        "Ceará": {
+          "estado": "Ceará",
+          "response": "Você está buscando concursos para o Ceará."
+        },
+        "Maranhão": {
+          "estado": "Maranhão",
+          "response": "Você está buscando concursos para o Maranhão."
+        },
+        "Alagoas": {
+          "estado": "Alagoas",
+          "response": "Você está buscando concursos para o Alagoas."
+        },
+        "Sergipe": {
+          "estado": "Sergipe",
+          "response": "Você está buscando concursos para o Sergipe."
+        }
+      }
+    },
+    "Centro-Oeste": {
+      "regiao": "Centro-Oeste",
+      "response": "Você está buscando concursos para o Centro-Oeste.",
+      "estados": {
+        "Distrito Federal": {
+          "estado": "Distrito Federal",
+          "response": "Você está buscando concursos para o Distrito Federal."
+        },
+        "Goiás": {
+          "estado": "Goiás",
+          "response": "Você está buscando concursos para o Goiás."
+        },
+        "Mato Grosso": {
+          "estado": "Mato Grosso",
+          "response": "Você está buscando concursos para o Mato Grosso."
+        },
+        "Mato Grosso do Sul": {
+          "estado": "Mato Grosso do Sul",
+          "response": "Você está buscando concursos para o Mato Grosso do Sul."
+        }
+      }
+    },
+    "Sudeste": {
+      "regiao": "Sudeste",
+      "response": "Você está buscando concursos para o Sudeste.",
+      "estados": {
+        "São Paulo": {
+          "estado": "São Paulo",
+          "response": "Você está buscando concursos para o São Paulo."
+        },
+        "Rio de Janeiro": {
+          "estado": "Rio de Janeiro",
+          "response": "Você está buscando concursos para o Rio de Janeiro."
+        },
+        "Espírito Santo": {
+          "estado": "Espírito Santo",
+          "response": "Você está buscando concursos para o Espírito Santo."
+        },
+        "Minas Gerais": {
+          "estado": "Minas Gerais",
+          "response": "Você está buscando concursos para o Minas Gerais."
+        }
+      }
+    },
+    "Sul": {
+      "regiao": "Sul",
+      "response": "Você está buscando concursos para o Sul.",
+      "estados": {
+        "Paraná": {
+          "estado": "Paraná",
+          "response": "Você está buscando concursos para o Paraná."
+        },
+        "Santa Catarina": {
+          "estado": "Santa Catarina",
+          "response": "Você está buscando concursos para a Santa Catarina."
+        },
+        "Rio Grande do Sul": {
+          "estado": "Rio Grande do Sul",
+          "response": "Você está buscando concursos para o Rio Grande do Sul."
+        }
+      }
+    }
+  },
+  "education": {
+    "Ensino Fundamental": {
+      "ensino": "Ensino Fundamental",
+      "response": "Você está buscando concursos para Ensino Fundamental."
+    },
+    "Ensino Médio": {
+      "ensino": "Ensino Médio",
+      "response": "Você está buscando concursos para Ensino Médio."
+    },
+    "Ensino Superior": {
+      "ensino": "Ensino Superior",
+      "response": "Você está buscando concursos para Ensino Superior."
+    },
+    "Ensino Técnico": {
+      "ensino": "Ensino Técnico",
+      "response": "Você está buscando concursos para Ensino Técnico."
+    },
+    "Pós-Graduação": {
+      "ensino": "Pós-Graduação",
+      "response": "Você está buscando concursos para Pós-Graduação."
+    }
+  }
+}
+

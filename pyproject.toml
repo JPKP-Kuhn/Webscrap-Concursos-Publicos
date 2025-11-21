@@ -1,0 +1,29 @@
+[project]
+name = "projeto_poo"
+version = "0.1.0"
+description = "projeto-poo using crewAI"
+authors = [{ name = "João Pedro Kuhn", email = "pedrojoaojpk@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]==1.4.1",
+    "dotenv>=0.9.9",
+    "pyrogram>=2.0.106",
+    "scrapfly-sdk>=0.8.23",
+    "tgcrypto>=1.2.5",
+]
+
+[project.scripts]
+projeto_poo = "projeto_poo.main:run"
+run_crew = "projeto_poo.main:run"
+train = "projeto_poo.main:train"
+replay = "projeto_poo.main:replay"
+test = "projeto_poo.main:test"
+run_with_trigger = "projeto_poo.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

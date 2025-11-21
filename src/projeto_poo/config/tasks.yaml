@@ -1,0 +1,102 @@
+context_planner_text:
+  description: >
+    Você receberá o {topic} enviado por {user} e deverá extrair os pontos-chave
+    que orientarão toda a pesquisa posterior. Sua função é identificar, com clareza,
+    os elementos essenciais que devem ser usados pelo agente de webscraping na busca
+    por informações relevantes.
+
+    Os pontos importantes que você deve extrair incluem:
+    Região brasileira, estado, cidade, área de atuação, nível de escolaridade,
+    faixa salarial, período de inscrição, data de prova, número de vagas,
+    órgão responsável e qualquer outro detalhe citado pelo usuário em sua solicitação.
+  expected_output: >
+    Sua resposta final deve ser uma lista estruturada de tópicos 
+    e palavras-chave extraídas de {topic}, organizadas por categoria (localização, requisitos, prazos etc.
+  agent: context_planner_agent
+
+webscrap_task:
+  description: >
+    Com base nos pontos-chave fornecidos pelo planejador de contexto,
+    você deve coletar dados relevantes sobre {topic} de {web}, essa busca é utilizada 
+    por meio de uma ferramenta scrapfly e webscraptool. Os dados mais relevantes
+    para essa pesquisa incluem: Região brasileira, estado, cidade, área de atuação,
+    nível de escolaridade, faixa salarial, data de inscrição, data de prova, número de vagas,
+    órgão responsável, entre outros, todas informadas pelo {user} em seu {topic}.
+    Certifique-se de extrair informações precisas e úteis que atendam
+    às necessidades de {user}. Informações úteis incluem: Arquivos PDF, Datas (dia-mês-ano), prazos, requisitos,
+    benefícios, descrições de cargos, entre outros. Você procura por notícias em {web}, além de explorar
+    por concursos da própria página do estado em que {user} vive.
+  expected_output: >
+    Os dados coletados devem ser retornados em um formato estruturado e padronizado,
+    preferencialmente como uma lista de objetos JSON. Cada objeto deve representar
+    um concurso, edital, notícia ou oportunidade encontrada.
+
+    Para cada item coletado, o agente deve organizar as informações em campos
+    claramente definidos, mesmo que alguns estejam ausentes ou não encontrados.
+    
+    A estrutura mínima recomendada para cada item é:
+
+    - titulo: Título principal da notícia, concurso ou edital.
+    - descricao: Pequeno resumo do conteúdo encontrado.
+    - fonte: URL original de onde os dados foram extraídos.
+    - regiao: Região brasileira (Norte, Nordeste, etc.).
+    - estado: Estado correspondente, ou null se não aplicável.
+    - cidade: Cidade correspondente, ou null se não aplicável.
+    - orgao_responsavel: Nome do órgão que publica o concurso/edital.
+    - area_atuacao: Área do cargo (administrativo, saúde, segurança, educação etc.).
+    - escolaridade_exigida: Exigência mínima (ex.: fundamental, médio, superior).
+    - faixa_salarial: Salário informado ou intervalo.
+    - numero_vagas: Total de vagas.
+    - data_inscricao: Data (dia/mês/ano) de início e fim das inscrições.
+    - data_prova: Data(s) prevista(s) para prova.
+    - pdfs: Lista de links de arquivos PDF relacionados.
+    - beneficios: Benefícios informados (vale alimentação, plano de saúde etc.).
+    - requisitos: Lista de requisitos específicos mencionados.
+    - data_extracao: Momento em que o agente coletou os dados.
+    - outras_informacoes: Qualquer detalhe adicional encontrado.
+
+    O agente deve retornar todos os itens encontrados dentro de um único objeto
+    JSON contendo o campo "resultados": [...].
+
+    O objetivo desta estrutura é permitir que agentes posteriores possam facilmente
+    identificar, filtrar e avaliar a relevância de cada item correspondente ao tópico pesquisado.
+  agent: webscrap_agent
+
+data_analysis_task:
+  description: >
+    Utilize os dados coletados pelo agente de webscraping para analisar
+    as informações sobre {topic}. Identifique padrões, tendências e insights
+    que possam ser úteis para {user}. Seu objetivo é transformar os dados brutos
+    em insights acionáveis que ajudem na compreensão de {topic}. Vocês deve focar
+    nos dados relevantes de {topic} como: Região brasileira, estado, cidade, área de atuação,
+    nível de escolaridade, faixa salarial, data de inscrição, data de prova, número de vagas,
+    órgão responsável, entre outros.
+  expected_output: >
+    Um relatório  estruturado com seções como 'tendências', 'padrões relevantes' e 
+    'recomendações', formatado em markdown. Este relatório
+    de análise detalhada fornece insights acionáveis
+    a partir dos dados coletados sobre {topic}.
+  agent: data_analysis_agent
+
+content_resume_task:
+  description: >
+    Com base nas análises fornecidas pelo agente de análise de dados,
+    você deve criar um resumo conciso, de no máximo 4000 caracters, limite do telegram
+    para mensagens, e informativo das descobertas sobre {topic}. 
+    Foque em destacar os pontos mais importantes de forma clara.
+  expected_output: >
+    Um resumo claro e compreensível, formato markdown, das descobertas sobre {topic},
+    destacando os aspectos mais relevantes para {user}.
+    Segue um exemplo de modelo de formato para esse relatório estruturado -
+  agent: content_resume_agent 
+
+final_report_task:
+  description: >
+    Utilize os resumos fornecidos pelo agente de resumo de conteúdo
+    para compilar um relatório final abrangente sobre {topic}.
+    Organize as informações de maneira clara e coesa para comunicar
+    as descobertas de forma eficaz.
+  expected_output: >
+    Um relatório final detalhado que reúne todas as descobertas sobre {topic},
+    atendendo às necessidades de {user}.
+  agent: final_report_agent
